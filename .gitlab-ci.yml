@@ -34,6 +34,11 @@ build-debian-12-amd64:
     - if: $CI_COMMIT_TAG
       when: never
     - when: always
+  artifacts:
+    expire_in: 1 week
+    name: "$CI_PROJECT_NAME-debian-12-amd64-$CI_JOB_ID"
+    paths:
+      - "deploy/linux-image-*.deb"
 
 build-debian-13-amd64:
   image: robertcnelson/beagle-devscripts-kernel-debian-13-amd64:latest
@@ -60,3 +65,8 @@ build-debian-13-amd64:
     - if: $CI_COMMIT_TAG
       when: never
     - when: always
+  artifacts:
+    expire_in: 1 week
+    name: "$CI_PROJECT_NAME-debian-13-amd64-$CI_JOB_ID"
+    paths:
+      - "deploy/linux-image-*.deb"
