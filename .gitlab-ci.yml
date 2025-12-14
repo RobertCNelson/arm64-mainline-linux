@@ -7,8 +7,6 @@ before_script:
   - git config --global user.email "$GITLAB_USER_EMAIL"
   - git config --global user.name "$GITLAB_USER_NAME"
   - . version.sh && echo $BRANCH
-#  - pip3 install --break-system-packages --root-user-action=ignore git+http://forgejo.gfnd.rcn-ee.org:3000/mirror/dt-schema.git@main
-#  - dt-validate --version
 
 build-debian-12-amd64:
   image: robertcnelson/beagle-devscripts-kernel-debian-12-amd64:latest
@@ -23,7 +21,7 @@ build-debian-12-amd64:
   script:
     - tar --zstd -xf ccache.tar.zst -C / || true
     - df -h /dev/shm
-    - ccache -M 2G
+    - ccache -M 5G
     - ccache -sv
     - ccache --recompress=uncompressed
     - ccache -z
@@ -56,7 +54,7 @@ build-debian-13-amd64:
   script:
     - tar --zstd -xf ccache.tar.zst -C / || true
     - df -h /dev/shm
-    - ccache -M 2G
+    - ccache -M 5G
     - ccache -sv
     - ccache --recompress=uncompressed
     - ccache -z
@@ -92,7 +90,7 @@ build-debian-14-amd64:
     - apt-get dist-upgrade -yq
     - tar --zstd -xf ccache.tar.zst -C / || true
     - df -h /dev/shm
-    - ccache -M 2G
+    - ccache -M 5G
     - ccache -sv
     - ccache --recompress=uncompressed
     - ccache -z
