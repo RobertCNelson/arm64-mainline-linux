@@ -93,7 +93,7 @@ build-fedora-44-amd64:
     - ccache -M 5G
     - ccache -sv
     - ccache -z
-    - cp -v system.sh.gitlab system.sh
+    - cp -v system.sh.gitlab.crosstool system.sh
     - ./build_kernel.sh
     - du -sh KERNEL/$KERNEL_IMAGE || exit 1
     - ccache -sv
