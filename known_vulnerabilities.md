@@ -2,8 +2,8 @@
 
 - Name: unknown
 - Type: cpe
-- Date: 2026-11-16T10:39:00.755804175-06:00
-- Kernel Version: 7.4-rc3
+- Date: 2026-11-23T08:54:40.90005051-06:00
+- Kernel Version: 7.4-rc4
 
 | Package | Vulnerability ID | Severity | Fixed | Fixed in Kernel Version | Summary |
 |---------|------------------|----------|-------|-------------------------|---------|
